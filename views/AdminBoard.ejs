@@ -2,200 +2,153 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="./stylesheets/admin.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
 </head>
 <body>
-	<header>
-		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Products</a></li>
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">Contact Us</a></li>
-				<li style="float:right"><a href="#">Logout</a></li>
-			</ul>
-		</nav>
-	</header>
-  
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <title>iMall</title>
-    </head>
-    <body>
-      <div class="main-wrapper">
-        <div class="header">
-			<div class="header-left">
-				<a class="logo">
-					<img src="/stylesheets/assets/img/logo.png" width="35" height="35" alt=""> <span>Preclinic</span>
-				</a>
-			</div>
-			<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
-            <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
-            <ul class="nav user-menu float-right">
-                <li class="nav-item dropdown d-none d-sm-block">
-                   
-                    <div class="dropdown-menu notifications">
-                      
-                        <div class="drop-scroll">
-                           
-                       
-                    </div>
+    
+	<ul id="slide-out" class="side-nav fixed z-depth-2">
+        <li class="center no-padding">
+          <div class="indigo darken-2 white-text" style="height: 180px;">
+            <div class="row">
+              
+    
+              <p style="margin-top: -13%;">
+                Tirth Patel
+              </p>
+            </div>
+          </div>
+        </li>
+    
+        <li id="dash_dashboard"><a class="waves-effect" href="#!"><b>Dashboard</b></a></li>
+    
+        <ul class="collapsible" data-collapsible="accordion">
+          <li id="dash_users">
+            <div id="dash_users_header" class="collapsible-header waves-effect"><b>Users</b></div>
+            <div id="dash_users_body" class="collapsible-body">
+              <ul>
+                <li id="users_seller">
+                  <a class="waves-effect" style="text-decoration: none;" href="#!">Seller</a>
                 </li>
-               
-                <li class="nav-item dropdown has-arrow">
-                    <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
-                        <span class="user-img"><img class="rounded-circle" src="/stylesheets/assets/img/user.jpg" width="40" alt="Admin">
-							</span>
-                        <span>Doctor</span>
-                    </a>
-					<div class="dropdown-menu">
-						
-					
-						
-						<a class="dropdown-item" href="/doctor/logout">Logout</a>
-					</div>
+    
+                <li id="users_customer">
+                  <a class="waves-effect" style="text-decoration: none;" href="#!">Customer</a>
                 </li>
+              </ul>
+            </div>
+          </li>
+    
+          <li id="dash_products">
+            <div id="dash_products_header" class="collapsible-header waves-effect"><b>Products</b></div>
+            <div id="dash_products_body" class="collapsible-body">
+              <ul>
+                <li id="products_product">
+                  <a class="waves-effect" style="text-decoration: none;" href="#!">Products</a>
+                  <a class="waves-effect" style="text-decoration: none;" href="#!">Orders</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+    
+          <li id="dash_categories">
+            <div id="dash_categories_header" class="collapsible-header waves-effect"><b>Categories</b></div>
+            <div id="dash_categories_body" class="collapsible-body">
+              <ul>
+                <li id="categories_category">
+                  <a class="waves-effect" style="text-decoration: none;" href="#!">Category</a>
+                </li>
+    
+                <li id="categories_sub_category">
+                  <a class="waves-effect" style="text-decoration: none;" href="#!">Sub Category</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+    
+          <li id="dash_brands">
+            <div id="dash_brands_header" class="collapsible-header waves-effect"><b>Brands</b></div>
+            <div id="dash_brands_body" class="collapsible-body">
+              <ul>
+                <li id="brands_brand">
+                  <a class="waves-effect" style="text-decoration: none;" href="#!">Brand</a>
+                </li>
+    
+                <li id="brands_sub_brand">
+                  <a class="waves-effect" style="text-decoration: none;" href="#!">Sub Brand</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </ul>
+    
+      <header>
+        <ul class="dropdown-content" id="user_dropdown">
+          <li><a class="indigo-text" href="#!">Profile</a></li>
+          <li><a class="indigo-text" href="/logout">Logout</a></li>
+        </ul>
+    
+        <nav class="indigo" role="navigation">
+          <div class="nav-wrapper">
+            
+    
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a class='right dropdown-button' href='' data-activates='user_dropdown'><i class=' material-icons'>account_circle</i></a>
+              </li>
             </ul>
-            <div class="dropdown mobile-user-menu float-right">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                <div class="dropdown-menu dropdown-menu-right">
-                   
-                 
-                    
-                    <a class="dropdown-item" href="/doctor/logout">Logout</a>
-                </div>
-            </div>
-        </div>
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-inner slimscroll">
-                <div id="sidebar-menu" class="sidebar-menu">
-                    <ul>
-                        <li class="menu-title">Main</li>
-                        <li class="active">
-                            <a href="/dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
-                        </li>
-                        <li>
-                            <a href="/allPatients"><i class="fa fa-hospital-o"></i> <span>All Patients</span></a>
-                        </li>
-                        <li>
-                            <a href="/patients"><i class="fa fa-wheelchair"></i> <span>My Patients</span></a>
-                        </li>
-                      
-                        <li >
-                            <a href="/allDoctors"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>                      
-        <div class="page-wrapper">
-             <div class="content"> 
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                        <div class="dash-widget">
-							<span class="dash-widget-bg1"><i class="fa fa-stethoscope" aria-hidden="true"></i></span>
-							<div class="dash-widget-info text-right">
-								<h3>98</h3>
-								<span class="widget-title1">Doctors <i class="fa fa-check" aria-hidden="true"></i></span>
-							</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                        <div class="dash-widget">
-                            <span class="dash-widget-bg2"><i class="fa fa-user-o"></i></span>
-                            <div class="dash-widget-info text-right">
-                                <h3>1072</h3>
-                                <span class="widget-title2">Patients <i class="fa fa-check" aria-hidden="true"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                        <div class="dash-widget">
-                            <span class="dash-widget-bg3"><i class="fa fa-user-md" aria-hidden="true"></i></span>
-                            <div class="dash-widget-info text-right">
-                                <h3>72</h3>
-                                <span class="widget-title3">Attend <i class="fa fa-check" aria-hidden="true"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                        <div class="dash-widget">
-                            <span class="dash-widget-bg4"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
-                            <div class="dash-widget-info text-right">
-                                <h3>618</h3>
-                                <span class="widget-title4">Pending <i class="fa fa-check" aria-hidden="true"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-				<div class="row">
-					
-				
-				</div>
-                <div class="col-sm-7 col-6">
-                     <h5 class="page-title"> WELCOME TO DASHBOARD</h5>
-                 </div>
-                </div>
-                <div class="card-box profile-header">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="profile-view">
-                                <div class="profile-img-wrap">
-                                    <div class="profile-img">
-                                        <a href="#"><img class="avatar" src="/stylesheets/assets/img/user.jpg" alt=""></a>
-                                    </div>
-                                </div>
-                              
-                                <div class="profile-basic">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="profile-info-left">
-                                                <h3 class="user-name m-t-0 mb-0"><%=doctor.DoctorsName %></h3>
-                                                <small class="text-muted">Resident Doctor</small>
-                                                <div class="staff-id">Doctor ID :<%=doctor._Id%></div>
-                                                <div class="staff-msg"><a href="#" class="btn btn-primary">Send Message</a></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <ul class="personal-info">
-                                                <li>
-                                                    <span class="title">Phone:</span>
-                                                    <span class="text"><a href="#"><%=doctor.phoneNumber%></a></span>
-                                                </li>
-                                                <li>
-                                                    <span class="title">Email:</span>
-                                                    <span class="text"><a href="#"><%=doctor.email%></a></span>
-                                                </li>
-                                           
-                                                <li>
-                                                    <span class="title">Gender:</span>
-                                                    <span class="text"><%=doctor.gender%></span>
-                                                </li>
-                                                <li>
-                                                    <span class="title">Specializaton:</span>
-                                                    <span class="text"><%=doctor.specialization%></span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                        
-                        </div>
-                    </div>
-                </div>
-                
-			
-          
-    <div class="sidebar-overlay" data-reff=""></div>
-    <script src="/stylesheets/assets/js/jquery-3.2.1.min.js"></script>
-	<script src="/stylesheets/assets/js/popper.min.js"></script>
-    <script src="/stylesheets/assets/js/bootstrap.min.js"></script>
-    <script src="/stylesheets/assets/js/jquery.slimscroll.js"></script>
-    <script src="/stylesheets/assets/js/app.js"></script>
+    
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+          </div>
+        </nav>
+    
+        <nav>
+          <div class="nav-wrapper indigo darken-2">
+            <a style="margin-left: 20px;" class="breadcrumb" href="#!">Admin</a>
+            <a class="breadcrumb" href="#!">Index</a>
+    
+            <div style="margin-right: 20px;" id="timestamp" class="right"></div>
+          </div>
+        </nav>
+      </header>
+      <div class="container">
+        <h1>Welcome to Admin Dashboard</h1>
+        
+        <!-- Buyers Section -->
+        <h2>Buyers</h2>
+        <ul>
+            <% buyers.forEach((buyer) => { %>
+                <li><%= buyer.name %></li>
+                <ul>
+                    <% buyer.purchasedProducts.forEach((product) => { %>
+                        <li><%= product.name %></li>
+                    <% }) %>
+                </ul>
+            <% }) %>
+        </ul>
+        
+        <!-- Sellers Section -->
+        <h2>Sellers</h2>
+        <ul>
+            <% sellers.forEach((seller) => { %>
+                <li><%= seller.name %></li>
+                <ul>
+                    <% seller.products.forEach((product) => { %>
+                        <li><%= product.name %> - <%= product.category %></li>
+                    <% }) %>
+                </ul>
+            <% }) %>
+        </ul>
+        
+        <!-- Graph Section -->
+        <h2>Graph</h2>
+        <!-- Add your graph here using charting libraries like Chart.js -->
+    </div>
+  
+  
               
             <footer>
                 <p>&copy; 2023 iMall Store. All rights reserved.</p>

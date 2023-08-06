@@ -7,6 +7,8 @@ body {
 }
 
 header {
+  display: flex;
+  flex-direction: row;
   background-color: #333;
   color: white;
   padding: 10px;
@@ -41,79 +43,60 @@ footer {
   background-color: #333;
   color: white;
   padding: 10px;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 50px;
   bottom: 0;
 }
+/* admin.css */
 
-
-/* Style for slide-out navigation */
-#slide-out {
-  width: 250px;
+/* Adjust the overall height of the sidebar */
+#sidebar {
+  height: 100vh; /* Set the sidebar height to 100% of the viewport height */
+  overflow-y: auto; /* Enable scrolling if the content exceeds the viewport height */
 }
 
-/* Style for full name text */
-#fullName {
-  font-size: 24px;
-  margin-top: 5%;
+/* Style for the active and hovered navigation links */
+.nav-item .nav-link {
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Style for dashboard link */
-#dash_dashboard a {
-  color: #000;
+.nav-item .nav-link.active,
+.nav-item .nav-link:hover {
+  background-color: #f8f9fa; /* Light gray background */
+  color: #007bff; /* Blue text color */
 }
 
-/* Style for collapsible headers */
-.collapsible-header {
-  background-color: #f5f5f5;
-  color: #000;
+/* Style for the dropdown toggle link */
+.nav-item .nav-link.dropdown-toggle::after {
+  content: ""; /* Remove the default dropdown arrow */
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
 }
 
-/* Style for active collapsible header */
-.active .collapsible-header {
-  background-color: #eeeeee;
-  color: #000;
+/* Style for the dropdown menu */
+.dropdown-menu {
+  background-color: #f8f9fa; /* Light gray background */
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-/* Style for products link */
-#dash_products_header {
-  background-color: #ffeb3b;
-  color: #000;
+.dropdown-item {
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Style for user management card */
-.card-title {
-  font-size: 24px;
-  padding-bottom: 20px;
+.dropdown-item:hover {
+  background-color: #e2e6ea; /* Slightly darker gray on hover */
+  color: #007bff; /* Blue text color on hover */
 }
 
-/* Style for user management icons */
-.material-icons {
-  font-size: 64px;
-  margin-bottom: 16px;
-}
 
-/* Style for user management links */
-span h5 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-/* Style for product management card */
-#dash_products_header {
-  background-color: #f44336;
-  color: #fff;
-}
-
-/* Style for product management icons */
-.material-icons {
-  font-size: 64px;
-  margin-bottom: 16px;
-}
-
-/* Style for product management links */
-span h5 {
-  margin-top: 0;
-  margin-bottom: 0;
-}

@@ -1,11 +1,6 @@
-import { emitWarning } from "process";
-import Model from "mongoose";
-import { db } from "../config/database.config";
-import ProductSchema from "./productsModel";
 import mongoose from "mongoose";
-import { transform } from "typescript";
 
-export interface UserAttributes {
+export interface AdminAttributes {
     
     _id:string;
     email:string;
@@ -14,19 +9,10 @@ export interface UserAttributes {
     phone:string;
     address:string;
     password:string;
-}
-export interface AdminAttributes extends UserAttributes {
     passCode: string;
 }
 
-export type UserType = "buyer" | "seller" | "admin";
-
-export interface AuthenticatedUser {
-    userId: string;
-    role: UserType;
-}
-
-const UserSchema = new mongoose.Schema(
+const AdminSchema = new mongoose.Schema(
     {
 
     email:{
@@ -55,6 +41,11 @@ const UserSchema = new mongoose.Schema(
     password:{
         type:String,
         allowNull:false
+    },
+    passCode:{
+        type:String,
+        primaryKey: true,
+        allowNull: false
     }
 
 }, {
@@ -70,6 +61,6 @@ const UserSchema = new mongoose.Schema(
 })
 
 
-const User = mongoose.model<UserAttributes>("User", UserSchema);
+const Admin = mongoose.model<AdminAttributes>("Admin", AdminSchema);
 
-export default User;
+export default Admin;
